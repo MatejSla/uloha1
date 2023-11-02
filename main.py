@@ -24,3 +24,4 @@ else:
     stredna2 = cislo % 10
     priemer = (stredna1 + stredna2) / 2
     print(f"Priemer dvoch stredných cifier: {priemer}")
+
