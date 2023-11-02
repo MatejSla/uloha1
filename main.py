@@ -1,16 +1,26 @@
-# This is a sample Python script.
+cislo = int(input("Zadaj číslo: "))
+pocet_cifier = 0
+originalne_cislo = cislo
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Zistíme počet cifier v čísle
+while cislo > 0:
+    cislo //= 10
+    pocet_cifier += 1
 
+cislo = originalne_cislo
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if pocet_cifier % 2 == 1:
+    # Nepárny počet cifier, vrátime strednú cifru
+    for _ in range(pocet_cifier // 2):
+        cislo //= 10
+    stredna_cifra = cislo % 10
+    print(f"Stredná cifra: {stredna_cifra}")
+else:
+    # Párny počet cifier, vrátime priemer dvoch stredných cifier
+    for _ in range(pocet_cifier // 2 - 1):
+        cislo //= 10
+    stredna1 = cislo % 10
+    cislo //= 10
+    stredna2 = cislo % 10
+    priemer = (stredna1 + stredna2) / 2
+    print(f"Priemer dvoch stredných cifier: {priemer}")
