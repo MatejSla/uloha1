@@ -1,8 +1,9 @@
+# 6ka prikladik <3
 cislo = int(input("Zadaj číslo: "))
 pocet_cifier = 0
 originalne_cislo = cislo
 
-# Zistíme počet cifier v čísle
+# Zistíme počet cifier
 while cislo > 0:
     cislo //= 10
     pocet_cifier += 1
@@ -10,13 +11,13 @@ while cislo > 0:
 cislo = originalne_cislo
 
 if pocet_cifier % 2 == 1:
-    # Nepárny počet cifier, vrátime strednú cifru
+    # Nepárny počet cifier
     for _ in range(pocet_cifier // 2):
         cislo //= 10
     stredna_cifra = cislo % 10
     print(f"Stredná cifra: {stredna_cifra}")
 else:
-    # Párny počet cifier, vrátime priemer dvoch stredných cifier
+    # Párny počet cifier, vrátime priemer
     for _ in range(pocet_cifier // 2 - 1):
         cislo //= 10
     stredna1 = cislo % 10
